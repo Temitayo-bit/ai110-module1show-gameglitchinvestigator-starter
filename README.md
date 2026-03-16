@@ -25,9 +25,16 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📝 Document Your Experience
 
-- [ ] Describe the game's purpose.
-- [ ] Detail which bugs you found.
-- [ ] Explain what fixes you applied.
+**Game purpose:** A number guessing game where the player picks a number within a range and receives hints until they guess correctly or run out of attempts. Points are awarded based on how few attempts it takes.
+
+**Bugs found:**
+1. The game accepted out-of-range inputs (negative numbers and values above 100).
+2. Hints were backwards — guessing too low showed "Go LOWER" instead of "Go HIGHER".
+
+**Fixes applied:**
+1. Added a range check in `parse_guess()` to reject any number below 1 or above 100.
+2. Corrected the comparison logic in `check_guess()` so hints point in the right direction.
+3. Refactored all game logic into `logic_utils.py` and added pytest tests to verify both fixes.
 
 ## 📸 Demo
 
